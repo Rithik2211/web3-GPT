@@ -1,4 +1,4 @@
-import { ThirdwebProvider } from '@thirdweb-dev/react';
+import { MetaMaskWallet, ThirdwebProvider, coinbaseWallet, embeddedWallet, metamaskWallet, phantomWallet } from '@thirdweb-dev/react';
 import '../styles/globals.css';
 
 // This is the chain your dApp will work on.
@@ -11,6 +11,12 @@ function MyApp({ Component, pageProps }) {
 		<ThirdwebProvider
 			activeChain={activeChain}
 			clientId={process.env.NEXT_PUBLIC_TEMPLATE_CLIENT_ID}
+			supportedWallets={[
+				embeddedWallet(),
+				metamaskWallet(),
+				phantomWallet(),
+				coinbaseWallet()
+			]}
 		>
 			<Component {...pageProps} />
 		</ThirdwebProvider>

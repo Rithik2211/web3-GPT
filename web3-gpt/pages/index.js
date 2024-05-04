@@ -1,6 +1,6 @@
 import styles from "../styles/Home.module.css";
 import { ConnectEmbed, darkTheme, useShowConnectEmbed } from '@thirdweb-dev/react';
-import { NextPage } from 'next';
+import NavBar from "../components/nav-bar";
 
 const customTheme = darkTheme({
   colors: {
@@ -31,9 +31,9 @@ export default function Home() {
             />
           </div>
           ) : (
-          <div> 
-           <h1>Hi</h1>
-          </div>
+            <>
+              <NavBar />
+            </>
           )
         }
       </div>
